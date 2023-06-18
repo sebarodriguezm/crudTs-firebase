@@ -760,4 +760,8 @@ export class CrudService<TMain, TSub = any, TSub2 = any, TSub3 = any> {
   getCurrentUser() {
       return this.auth.currentUser;
     }
+
+  logout(){
+    return this.auth.signOut();
+  }  
 }

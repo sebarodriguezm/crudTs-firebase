@@ -30,6 +30,7 @@ user:any;
    }
 
   ngOnInit() {
+   
   }
 
   add() {
@@ -61,6 +62,7 @@ user:any;
 
 
   login(){
+    console.log(this.admin)
     this.crud.Login(this.admin).then(res => {
 
       // this.getUserData(res.user.uid);
@@ -72,8 +74,10 @@ user:any;
 
   }
 
-
-  thisUser() {
-    this.user = this.crud.getCurrentUser();
+  logout(){
+    this.crud.logout();
   }
+
+
+  
 }

@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { CrudService } from 'src/app/services/crud.service';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
     HomePageRoutingModule,
     ComponentsModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers: [CrudService]
 })
 export class HomePageModule {}

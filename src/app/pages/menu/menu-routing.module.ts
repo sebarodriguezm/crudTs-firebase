@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MenuPage } from './menu.page';
 import { LoginPageModule } from '../login/login.module';
+import { GuardsGuard } from 'src/app/core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'term',
+    canActivate: [GuardsGuard],
     loadChildren: () => import('./term/term.module').then( m => m.TermPageModule)
   },
   {
