@@ -32,13 +32,9 @@ term: TermDto = new TermDto();
   }
 
   getTerm() {
-    console.log('temid', this.term.id)
-    console.log(this.term)
     if (this.term && this.term.id) {
       this.crudTerm.getDocument(this.term.id).subscribe(data => {
         this.term = data;
-        
-       
       });
     }else{
       console.log('no hay data')
