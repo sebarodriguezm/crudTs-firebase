@@ -2,5 +2,13 @@
 
 
 <ion-content>
-<h1>asdasd</h1>
+<h1>Ingresa el id de la solicitud </h1>
+<ion-input   type="text" [(ngModel)]="term.id"></ion-input>
+<ion-button (click)="getTerm()" expand="block"  shape="round">
+    Click me
+</ion-button>
+
+<ion-input  type="text" [(ngModel)]="term.terms"></ion-input>
+<ion-input  type="text" [(ngModel)]="term.title"></ion-input>
+
 </ion-content>
