@@ -1,0 +1,17 @@
+<ion-toolbar>
+  <ion-buttons slot="end">
+    <ion-button color="danger" (click)="dismiss()">
+      <ion-icon name="close-circle" class="icon-close-circle"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+
+<ion-content>
+
+<ion-input  type="text" [(ngModel)]="term.terms"></ion-input>
+<ion-input  type="text" [(ngModel)]="term.title"></ion-input>
+<ion-button (click)="edit()" color="danger">
+  Click me
+</ion-button>
+</ion-content>

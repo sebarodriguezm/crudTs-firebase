@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-card-content>
+    <ion-col size="12">
+      <ion-item lines="none">
+        <ion-label position="stacked">Pregunta</ion-label>
+        <ion-input
+          [(ngModel)]="term.terms"
+          type="text"
+          placeholder="Escribe una pregunta frecuente"
+          [autoGrow]="true"
+        ></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-item lines="none">
+        <ion-label position="stacked">Respuesta</ion-label>
+        <ion-textarea
+          name="title"
+          [(ngModel)]="term.title"
+          placeholder="Escribe una descripción"
+          
+        ></ion-textarea>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <div class="ion-text-center">
+        <ion-button (click)="add()" color="success" shape="round"
+          >ACEPTAR</ion-button
+        >
+      </div>
+    </ion-col>
+  </ion-card-content>
+
+  <ion-card-content *ngFor="let item of terms; let i = index">
+    <ion-label>id: {{ terms[i].id }} title: {{ terms[i].title }} </ion-label>
+    <ion-icon (click)="verTerm(item)" slot="start" name="create"></ion-icon>
+  </ion-card-content>
+</ion-content>

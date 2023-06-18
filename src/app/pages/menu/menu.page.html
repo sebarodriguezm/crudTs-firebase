@@ -1,0 +1,33 @@
+
+<ion-split-pane  contentId="content">
+  
+  <ion-menu contentId="content" menuId="content" side="start">
+    <ion-content class="ion-padding-vertical ion-text-center">
+     
+      <ion-menu-toggle auto-hide="false" *ngFor="let p of pages" id="toggle">
+        <ion-item
+          lines="none"
+            
+          [routerLink]="p.url"
+          routerDirection="root"
+          detail
+        >  
+        <ion-icon id="icon" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-outline'"></ion-icon>
+        <ion-label id="title">{{ p.title }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    
+    </ion-content>
+    <ion-footer >
+<ion-item>
+  
+  
+ 
+</ion-item>
+</ion-footer>
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
+  
+</ion-split-pane>
+
+
