@@ -9,6 +9,7 @@ import { CrudService } from 'src/app/services/crud.service';
   styleUrls: ['./term-detail.page.scss'],
 })
 export class TermDetailPage implements OnInit {
+  //se inicializa el objeto dto
   term: TermDto = new TermDto();
   
 
@@ -17,7 +18,9 @@ export class TermDetailPage implements OnInit {
     private modalCtrl: ModalController,
     private crud: CrudService<TermDto>
   ) {
+    //se inicilaliza la instancia 
     this.crud = this.crud.newCrudInstance();
+    //se setea la tabla 
     this.crud.setTable('terms'); 
    }
 
@@ -25,6 +28,7 @@ export class TermDetailPage implements OnInit {
     this.getTerm();
   }
 
+  //se obtiene el objeto a traves del id con getdocument
   getTerm() {
     console.log(this.term)
     if (this.term && this.term.id) {

@@ -10,6 +10,7 @@ import { CrudService } from 'src/app/services/crud.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  //objetos dto 
 user: UserAdmDto;
 term: TermDto = new TermDto();
 
@@ -22,8 +23,8 @@ term: TermDto = new TermDto();
     //setear la tabla
     this.crud.setTable(DbTables.UsersAdm);
 
-    this.crud = this.crud.newCrudInstance();
-    this.crud.setTable('terms'); 
+    this.crudTerm = this.crud.newCrudInstance();
+    this.crudTerm.setTable('terms'); 
    }
 
   ngOnInit() {
@@ -34,7 +35,7 @@ term: TermDto = new TermDto();
     console.log('temid', this.term.id)
     console.log(this.term)
     if (this.term && this.term.id) {
-      this.crud.getDocument(this.term.id).subscribe(data => {
+      this.crudTerm.getDocument(this.term.id).subscribe(data => {
         this.term = data;
         
        
