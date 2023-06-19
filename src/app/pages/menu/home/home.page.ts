@@ -3,6 +3,8 @@ import { DbTables } from 'src/app/core/constants/db-tables.constant';
 import { TermDto } from 'src/app/core/dto/terms.dto';
 import { UserAdmDto } from 'src/app/core/dto/user-adm.dto';
 import { CrudService } from 'src/app/services/crud.service';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { AngularFireAuth } from '@angular/fire/compat/auth/auth';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +13,15 @@ import { CrudService } from 'src/app/services/crud.service';
 })
 export class HomePage implements OnInit {
   //objetos dto 
-user: UserAdmDto;
+
 term: TermDto = new TermDto();
+usuario: any;
+auth = getAuth();
 
   constructor(
     private crud: CrudService<UserAdmDto>,
-    private crudTerm: CrudService<TermDto>
+    private crudTerm: CrudService<TermDto>,
+    
   ) {
     //inicializar el crud
     this.crudTerm = this.crud.newCrudInstance();
@@ -25,7 +30,11 @@ term: TermDto = new TermDto();
    }
 
   ngOnInit() {
-    this.thisUser();
+    
+    this.auth.onAuthStateChanged((user) => {
+      this.usuario = user;
+      console.log(this.usuario)
+    });
   }
 
   getTerm() {
@@ -39,8 +48,14 @@ term: TermDto = new TermDto();
   }
 
   thisUser() {
-     this.crud.getCurrentUser();
-    console.log('user', this.user)
+    console.log('hola')
+this.crud.getCurrentUser().then(res => {
+  let usuario = res 
+  console.log(usuario)
+  return usuario
+});
+
+    
    
   }
 }
