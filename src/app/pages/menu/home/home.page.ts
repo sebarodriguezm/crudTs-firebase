@@ -32,7 +32,7 @@ term: TermDto = new TermDto();
   }
 
   getTerm() {
-    if (this.term && this.term.id) {
+    if (this.term.id) {
       this.crudTerm.getDocument(this.term.id).subscribe(data => {
         this.term = data;
       });

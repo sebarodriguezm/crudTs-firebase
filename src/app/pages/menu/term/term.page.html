@@ -33,8 +33,8 @@
     </ion-col>
   </ion-card-content>
 
-  <ion-card-content *ngFor="let item of terms; let i = index">
-    <ion-label>id: {{ terms[i].id }} title: {{ terms[i].title }} </ion-label>
+  <ion-card-content *ngFor="let item of terms;">
+    <ion-label>id: {{ item.id }} title: {{ item.title }} </ion-label>
     <ion-icon (click)="verTerm(item)" slot="start" name="create"></ion-icon>
   </ion-card-content>
 </ion-content>
