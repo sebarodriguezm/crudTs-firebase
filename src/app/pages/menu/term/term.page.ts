@@ -11,10 +11,10 @@ import { TermDetailPage } from '../term-detail/term-detail.page';
   styleUrls: ['./term.page.scss'],
 })
 export class TermPage implements OnInit {
-  //se inicializa el objeto dto para poder usar el ngfor
+  //se inicializa el objeto dto para poder usar el ngmodel
   term: TermDto = new TermDto();
 
-  //se inicializa la lista de objetos ddto para poder mostrar en html y filtrar hacer cosas buenas
+  //se inicializa la lista de objetos ddto para poder mostrar en html y filtrar etc
   terms: TermDto [] = [];
   
 
@@ -25,6 +25,7 @@ export class TermPage implements OnInit {
 
     //se inicializa instancia en crud y luege se setean las dbtables con los nombres de las tablas 
     this.crud = this.crud.newCrudInstance();
+    //setear la tabla
     this.crud.setTable(DbTables.Terms);
   }
 
@@ -53,30 +54,6 @@ export class TermPage implements OnInit {
       .catch((e) => {
         console.log(e);
       });
-  }
-
-
-
-  edit(id) {
-    // Obtener el término por su ID
-    const termToUpdate = this.terms.find((term) => term.id === id);
-
-    if (termToUpdate) {
-      console.log('encontrado', termToUpdate.id);
-      // Actualizar las propiedades del término
-      termToUpdate.terms = this.term.terms;
-      termToUpdate.title = this.term.title;
-
-      // Guardar los cambios en Firebase
-      this.crud
-        .updateDocument(termToUpdate)
-        .then(() => {
-          console.log('Término actualizado exitosamente');
-        })
-        .catch((error) => {
-          console.log('Error al actualizar el término:', error);
-        });
-    }
   }
 
   async verTerm(term: any) {

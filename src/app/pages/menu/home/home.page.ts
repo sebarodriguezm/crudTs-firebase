@@ -18,12 +18,9 @@ term: TermDto = new TermDto();
     private crud: CrudService<UserAdmDto>,
     private crudTerm: CrudService<TermDto>
   ) {
-    //iniicaliar la instancia crud
-    this.crud = this.crud.newCrudInstance();
-    //setear la tabla
-    this.crud.setTable(DbTables.UsersAdm);
-
+    //inicializar el crud
     this.crudTerm = this.crud.newCrudInstance();
+    //setear la tabla
     this.crudTerm.setTable('terms'); 
    }
 
