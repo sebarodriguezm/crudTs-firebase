@@ -61,7 +61,7 @@ user:any;
 }
 
 
-  login(){
+  /*login(){
     console.log(this.admin)
     this.crud.Login(this.admin).then(res => {
 
@@ -76,7 +76,7 @@ user:any;
 
   logout(){
     this.crud.logout();
-  }
+  }*/
 
 
   

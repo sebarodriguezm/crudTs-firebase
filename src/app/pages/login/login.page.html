@@ -1,5 +1,15 @@
 <app-header [title]="'Login'"></app-header>
 
 <ion-content>
-
+    <ion-item>
+        <ion-label position="stacked">email</ion-label>
+        <ion-input [(ngModel)]="admin.email" type="text" placeholder="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input [(ngModel)]="admin.password" type="text" placeholder="Contraseña"></ion-input>
+      </ion-item>
+      <ion-button expand="block"(click)="login()">Login</ion-button>
+      <ion-button expand="block"(click)="logout()">cerrar</ion-button>
+      <ion-input type="text" placeholder="Awesome Input"></ion-input>
 </ion-content>
