@@ -1,8 +1,8 @@
-<app-header></app-header>
+<app-header [title]="'Inicio'"></app-header>
 
 
 <ion-content>
-<h1>Ingresa el id de la solicitud </h1>
+<h1>Ingresa el id del term </h1>
 <ion-input   type="text" [(ngModel)]="term.id"></ion-input>
 <ion-button (click)="getTerm()" expand="block"  shape="round">
     Click me
