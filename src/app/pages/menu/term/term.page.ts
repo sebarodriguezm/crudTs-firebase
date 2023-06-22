@@ -4,6 +4,7 @@ import { DbTables } from 'src/app/core/constants/db-tables.constant';
 import { TermDto } from 'src/app/core/dto/terms.dto';
 import { CrudService } from 'src/app/services/crud.service';
 import { TermDetailPage } from '../term-detail/term-detail.page';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-term',
@@ -30,6 +31,7 @@ export class TermPage implements OnInit {
   }
 
   ngOnInit() {
+    const currentDate = new Date();
     this.getQuestions();
   }
 
@@ -45,7 +47,9 @@ export class TermPage implements OnInit {
   }
 
   add() {
-    this.crud
+    if (this.term.date) {
+      this.term.date = moment(this.term.date).valueOf();
+      this.crud
       .addToCollection(this.term)
       .then((res) => {
         console.log('exito');
@@ -54,6 +58,9 @@ export class TermPage implements OnInit {
       .catch((e) => {
         console.log(e);
       });
+      // Guardar el timestamp en Firebase o realizar las operaciones necesarias con él
+
+    }
   }
 
   async verTerm(term: any) {
@@ -63,4 +70,6 @@ export class TermPage implements OnInit {
     });
     await modal.present();
   }
+
+  
 }
