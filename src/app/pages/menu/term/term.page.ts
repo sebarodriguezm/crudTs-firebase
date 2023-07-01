@@ -48,6 +48,7 @@ export class TermPage implements OnInit {
 
   add() {
     if (this.term.date) {
+      //valueof para crear en formato timestamp
       this.term.date = moment(this.term.date).valueOf();
       this.crud
       .addToCollection(this.term)
@@ -58,8 +59,7 @@ export class TermPage implements OnInit {
       .catch((e) => {
         console.log(e);
       });
-      // Guardar el timestamp en Firebase o realizar las operaciones necesarias con él
-
+    
     }
   }
 
