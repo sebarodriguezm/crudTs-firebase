@@ -1,9 +1,17 @@
 <app-header [title]="'Inicio'"></app-header>
 
 
-<ion-content>
+<ion-content class="ion-text-center">
 <h1>Ingresa el id del term </h1>
-<ion-input   type="text" [(ngModel)]="term.id"></ion-input>
+
+<ion-input
+  aria-label="Custom input"
+  placeholder="Ingresa tu correo"
+  class="custom"
+  helperText="Helper text"
+  [maxlength]="20"
+  type="text" [(ngModel)]="term.id"
+></ion-input>
 <ion-button (click)="getTerm()" expand="block"  shape="round">
     Click me
 </ion-button>
