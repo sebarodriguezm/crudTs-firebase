@@ -12,7 +12,7 @@ import { LoadingController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 admin: UserAdmDto = new UserAdmDto();
-
+Recover: boolean = false;
   constructor(
     private crud: CrudService<UserAdmDto>,
     private router: Router,
@@ -22,21 +22,60 @@ admin: UserAdmDto = new UserAdmDto();
   ngOnInit() {
   }
 
-  login(){
-    console.log(this.admin)
-    this.crud.Login(this.admin).then(res => {
-
-      // this.getUserData(res.user.uid);
-      this.router.navigate(['/menu/home']);
-      this.loading.dismiss();
-    }, error => {
-      this.loading.dismiss();
-    });
-
+  login() {
+    // Validación de datos de entrada
+    if (!this.admin || !this.admin.email || !this.admin.password) {
+      console.error('Datos de inicio de sesión incompletos');
+      // Mostrar mensaje de error al usuario o tomar medidas apropiadas
+      return;
+    }
+  
+    this.crud.Login(this.admin)
+      .then(() => {
+        this.router.navigate(['/menu/home']);
+      })
+      .catch((error) => {
+        console.error('Error durante el inicio de sesión:', error);
+        // Mostrar mensaje de error al usuario o tomar medidas apropiadas
+      });
   }
 
   logout(){
     this.crud.logout();
   }
 
+  showRecover(){
+    this.Recover = !this.Recover
+  }
+
+  closeRecover(){
+    this.Recover = false;
+   
+  }
+
+  recoveryPass() {
+
+    this.crud.resetPassword(this.admin.email).then((data: any) => {
+      
+      console.log('Correo enviado::> ', data);
+     
+      this.router.navigate(['/menu/transport']);
+      this.closeRecover();
+    },
+      (err:any) => {
+       
+        //console.log('Error: ::>', err);
+        let msg: string;
+        if (err['code'] == "auth/user-not-found") {
+          msg = "recovery.userNotFound";
+        }
+        else if (err['code'] == "auth/invalid-email") {
+          msg = "recovery.invalidEmail";
+        }
+        else if (err['code'] == "auth/operation-not-allowed") {
+          msg = "recovery.operationNotAllowed";
+        }
+        
+      });
+  }
 }

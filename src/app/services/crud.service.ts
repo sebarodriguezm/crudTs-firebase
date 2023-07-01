@@ -764,4 +764,8 @@ export class CrudService<TMain, TSub = any, TSub2 = any, TSub3 = any> {
   logout(){
     return this.auth.signOut();
   }  
+
+  resetPassword(email: any) {
+    return this.auth.sendPasswordResetEmail(email);
+  }
 }
