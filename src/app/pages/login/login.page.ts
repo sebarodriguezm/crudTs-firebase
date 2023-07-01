@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserAdmDto } from 'src/app/core/dto/user-adm.dto';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from 'src/app/providers/crud.service';
 import { LoadingController } from '@ionic/angular';
 
 @Component({

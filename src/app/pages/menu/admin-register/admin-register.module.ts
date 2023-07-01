@@ -8,7 +8,7 @@ import { AdminRegisterPageRoutingModule } from './admin-register-routing.module'
 
 import { AdminRegisterPage } from './admin-register.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from 'src/app/providers/crud.service';
 
 @NgModule({
   imports: [

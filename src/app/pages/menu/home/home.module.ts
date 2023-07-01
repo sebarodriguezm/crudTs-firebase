@@ -8,7 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from 'src/app/providers/crud.service';
 
 @NgModule({
   imports: [

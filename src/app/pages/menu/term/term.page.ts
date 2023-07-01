@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { DbTables } from 'src/app/core/constants/db-tables.constant';
 import { TermDto } from 'src/app/core/dto/terms.dto';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from 'src/app/providers/crud.service';
 import { TermDetailPage } from '../term-detail/term-detail.page';
 import * as moment from 'moment';
 

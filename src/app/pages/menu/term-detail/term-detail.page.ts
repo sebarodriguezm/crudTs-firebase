@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { TermDto } from 'src/app/core/dto/terms.dto';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from 'src/app/providers/crud.service';
 
 @Component({
   selector: 'app-term-detail',

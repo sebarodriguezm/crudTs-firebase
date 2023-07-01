@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TermPageRoutingModule } from './term-routing.module';
 
 import { TermPage } from './term.page';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from 'src/app/providers/crud.service';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({

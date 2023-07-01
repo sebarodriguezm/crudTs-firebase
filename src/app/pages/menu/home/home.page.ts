@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DbTables } from 'src/app/core/constants/db-tables.constant';
 import { TermDto } from 'src/app/core/dto/terms.dto';
 import { UserAdmDto } from 'src/app/core/dto/user-adm.dto';
-import { CrudService } from 'src/app/services/crud.service';
+import { CrudService } from 'src/app/providers/crud.service';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { AngularFireAuth } from '@angular/fire/compat/auth/auth';
 
