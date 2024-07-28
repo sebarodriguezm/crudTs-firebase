@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductDto } from 'src/app/core/dto/product.dto';
 
 @Component({
   selector: 'app-menu',
@@ -11,8 +10,6 @@ export class MenuPage implements OnInit {
     { title: 'Productos', url: '/menu/home', icon: 'add-outline' },
  ];
 
-  product: ProductDto = new ProductDto();
-  products: ProductDto [] = [];
 
   constructor() { }
 
