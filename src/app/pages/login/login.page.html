@@ -15,12 +15,14 @@
     <ion-item lines="none" *ngIf="!Recover">
       <ion-label position="stacked" class="ion-padding-bottom">Contraseña</ion-label>
       <ion-input type="password" [(ngModel)]="admin.password"></ion-input>
+
+      <ion-text color="danger" *ngIf="!Recover" class="ion-padding-top"
+      (click)="showRecover()">
+        Recuperar contraseña
+    </ion-text>
     </ion-item>
 
-    <p *ngIf="!Recover" style="cursor:pointer;font-size: .8em !important;color:rgb(0, 0, 0);"
-    (click)="showRecover()">
-      Recuperar contraseña
-    </p>
+
 
 
     <div class="ion-padding" *ngIf="Recover">
