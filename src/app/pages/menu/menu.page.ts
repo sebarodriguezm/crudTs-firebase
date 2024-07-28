@@ -7,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPage implements OnInit {
   pages = [
-    { title: 'Home', url: '/menu/home', icon: 'add-outline' },
-    { title: 'Login', url: '/menu/login', icon: 'call-outline' },
-    { title: 'Term', url: '/menu/term', icon: 'mail-outline' },
-    { title: 'Admin-register', url: '/menu/admin-register', icon: 'person-outline' },
+    { title: 'Productos', url: '/menu/home', icon: 'add-outline' },
+   
  ];
   constructor() { }
 

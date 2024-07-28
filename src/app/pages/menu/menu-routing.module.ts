@@ -18,23 +18,7 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('../login/login.module').then( m => m.LoginPageModule)
   },
-  {
-    path: 'term',
-    canActivate: [GuardsGuard],
-    loadChildren: () => import('./term/term.module').then( m => m.TermPageModule)
-  },
-  {
-    path: 'term-detail',
-    loadChildren: () => import('./term-detail/term-detail.module').then( m => m.TermDetailPageModule)
-  },
-  {
-    path: 'admin-register',
-    loadChildren: () => import('./admin-register/admin-register.module').then( m => m.AdminRegisterPageModule)
-  },
-  {
-    path: 'pruebas',
-    loadChildren: () => import('./pruebas/pruebas.module').then( m => m.PruebasPageModule)
-  }
+ 
 
 ];
 

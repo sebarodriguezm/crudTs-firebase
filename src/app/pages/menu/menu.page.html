@@ -1,5 +1,8 @@
 <ion-split-pane contentId="content">
   <ion-menu menuId="content" side="start" class="menu-negro">
+    <div class="ion-text-center">
+      <img src="../../assets//img/logo-fondo-blanco.png" width="300px">
+    </div>
     <ion-content class="ion-padding-vertical ion-text-center">
       <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
         <ion-item lines="none" [routerLink]="p.url" routerDirection="root" detail>
