@@ -6,8 +6,8 @@
     <ion-content class="ion-padding-vertical ion-text-center">
       <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
         <ion-item lines="none" [routerLink]="p.url" routerDirection="root" detail>
-          <ion-icon id="icon" slot="start" [name]="p.icon" color="dark"></ion-icon>
-          <ion-label id="title">{{ p.title }}</ion-label>
+          <ion-icon id="icon" slot="start" [name]="p.icon" color="light"></ion-icon>
+          <ion-label id="title" color="light">{{ p.title }}</ion-label>
         </ion-item>
       </ion-menu-toggle>
     </ion-content>
