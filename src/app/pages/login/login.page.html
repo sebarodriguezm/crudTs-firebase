@@ -1,61 +1,73 @@
-
 <ion-content>
 
-<ion-row>
-
-  <!-- Login -->
-  <ion-col size="3" >
-    <div style="background-color: #FFFFFF; padding: 30px 0px;" class="ion-text-center">
-      <img src="../../assets//img/logo-fondo-blanco.png" width="300px">
-    </div>
-    <ion-item lines="none" *ngIf="!Recover">
-      <ion-label position="stacked" class="ion-padding-bottom">Email</ion-label>
-      <ion-input type="text" [(ngModel)]="admin.email"></ion-input>
-    </ion-item>
-    <ion-item lines="none" *ngIf="!Recover">
-      <ion-label position="stacked" class="ion-padding-bottom">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="admin.password"></ion-input>
-
-      <ion-text color="danger" *ngIf="!Recover" class="ion-padding-top"
-      (click)="showRecover()">
-        Recuperar contraseña
-    </ion-text>
-    </ion-item>
+  <ion-row>
 
 
+    <ion-col size="3">
+      <div class="ion-text-center">
+        <img src="../../assets//img/logo-fondo-blanco.png" width="300px">
+      </div>
 
 
-    <div class="ion-padding" *ngIf="Recover">
-      <ion-list style="background: transparent;">
-        <ion-item  lines="none" >
-          
-          <ion-input   type="email" placeholder="hola5" [(ngModel)]="admin.email">
-          </ion-input>
-        </ion-item>
+          <!-- Login -->
+      <ion-item lines="none" *ngIf="!Recover">
+        <ion-label position="stacked" class="ion-padding-bottom">Email</ion-label>
+        <ion-input type="text" [(ngModel)]="admin.email"></ion-input>
+      </ion-item>
+      <ion-item lines="none" *ngIf="!Recover" class="ion-padding-bottom">
+        <ion-label position="stacked" class="ion-padding-bottom">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="admin.password"></ion-input>
+      </ion-item>
+
+      <div class="ion-text-center">
+        <ion-button color="dark" size="large" shape="round"  (click)="login()">
+          Entrar
+        </ion-button>
+      </div>
       
-
-        <div class="ion-text-center">
-          <ion-button color="dark" shape="round" (click)="recoveryPass()" size="medium" class="text-uppercase">
-           hola5
-           </ion-button>
-           <ion-button fill="outline" (click)="showRecover()" *ngIf="Recover" size="medium" color="danger" shape="round"  >
-       hola6</ion-button>
-        </div>
-      </ion-list>
-      
-      
-    </div>
-  </ion-col>
-
-
-  <!-- Fondo -->
-  <ion-col size="9" class="ion-no-padding">
-    <div class="fondo-login" style="background-image: url(../../../assets/img/fondo-login.jpg);"></div>
-  </ion-col>
-
-
+      <ion-item lines="none">
+        <ion-text color="danger" *ngIf="!Recover"  (click)="showRecover()">
+          Recuperar contraseña
+        </ion-text>
   
-</ion-row>
+      </ion-item>
+    
+
+
+
+          <!-- Recover -->
+      <div class="ion-padding" *ngIf="Recover">
+        <ion-list style="background: transparent;">
+          <ion-item lines="none">
+
+            <ion-input type="email" placeholder="hola5" [(ngModel)]="admin.email">
+            </ion-input>
+          </ion-item>
+
+
+          <div class="ion-text-center">
+            <ion-button color="dark" shape="round" (click)="recoveryPass()" size="medium" class="text-uppercase">
+              hola5
+            </ion-button>
+            <ion-button fill="outline" (click)="showRecover()" *ngIf="Recover" size="medium" color="danger"
+              shape="round">
+              hola6</ion-button>
+          </div>
+        </ion-list>
+
+
+      </div>
+    </ion-col>
+
+
+    <!-- Fondo -->
+    <ion-col size="9" class="ion-no-padding">
+      <div class="fondo-login" style="background-image: url(../../../assets/img/fondo-login.jpg);"></div>
+    </ion-col>
+
+
+
+  </ion-row>
 
 
 
