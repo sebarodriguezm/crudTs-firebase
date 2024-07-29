@@ -1,12 +1,58 @@
-<app-header [title]="'Productos'" [color] = "'dark'"></app-header>
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="end">
+      <ion-button color="success"  (click)="showCreate('create')">
+        Crear producto
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 
 <ion-content class="ion-text-center">
 
-  <div class="ion-text-center ion-padding-top">
-    <ion-button  color="success">
-      Crear producto
-    </ion-button>
+  <div class="ion-text-center ion-padding-vertical">
+    
+
+
+
+    <ion-grid  *ngIf="showForm" class="ion-padding-horizontal" [ngClass]="efect ">
+      <ion-row>
+
+        <ion-col size="8" offset="2"  class="border">
+          <div class="ion-text-center ">
+            <h2 >Crear producto</h2>
+
+            <ion-list>
+              <ion-item lines="none">
+                <ion-label position="stacked">Nombre</ion-label>
+                <ion-input   [(ngModel)]="product.name" type="text" placeholder="Nombre del producto"></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label position="stacked">Extracto</ion-label>
+                <quill-editor  [(ngModel)]="product.extract" style="height: 200px;"></quill-editor>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label position="stacked">Descripción</ion-label>
+                <quill-editor class="input-sin-pad-left" [(ngModel)]="product.description" style="height: 300px;"></quill-editor>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label position="stacked">Precio</ion-label>
+                <ion-input  [(ngModel)]="product.price"  placeholder="Ingresa el precio">
+                </ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label position="stacked">Precio con descuento <ion-text color="danger">
+                  Opcional
+                </ion-text></ion-label>
+                <ion-input [(ngModel)]="product.discountPrice"  placeholder="Ingresa el precio con descuento">
+                </ion-input>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 
 </ion-content>
